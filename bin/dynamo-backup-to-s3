@@ -52,7 +52,7 @@ var dynamoBackup = new DynamoBackup({
 });
 
 dynamoBackup.on('error', function(data) {
-    console.log('Error backing up ' + data.tableName + ', Options: ' + program);
+    console.log('Error backing up ' + data.tableName);
     console.log(data.error);
     if (program.stopOnFailure) {
         process.exit(-1);
@@ -61,16 +61,16 @@ dynamoBackup.on('error', function(data) {
 
 dynamoBackup.on('start-backup', function(tableName) {
     runTimes[tableName] = moment();
-    console.log('Starting to copy table ' + tableName + ', Options: ' + program);
+    console.log('Starting to copy table ' + tableName);
 });
 
 dynamoBackup.on('end-backup', function(tableName) {
     var endTime = moment();
     var startTime = runTimes[tableName];
-    console.log('Done copying table ' + tableName + '. Took ' + endTime.diff(startTime, 'minutes', true).toFixed(2) + ' minutes' + ', Options: ' + program);
+    console.log('Done copying table ' + tableName + '. Took ' + endTime.diff(startTime, 'minutes', true).toFixed(2) + ' minutes');
 });
 
 dynamoBackup.backupAllTables(function() {
-    console.log('Finished backing up DynamoDB' + ', Options: ' + program);
+    console.log('Finished backing up DynamoDB');
     process.exit(0);
 });
