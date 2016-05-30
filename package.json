@@ -1,11 +1,11 @@
 {
-  "name": "dynamo-backup-to-s3",
-  "version": "0.3.0",
-  "author": "Dylan Lingelbach (https://github.com/dylanlingelbach)",
+  "name": "dynamo-to-s3",
+  "version": "0.1.0",
+  "author": "Dylan Lingelbach (https://github.com/dylanlingelbach), Edgar Chinchilla (https://github.com/edgarchinchilla)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/markitx/dynamo-backup-to-s3.git"
+    "url": "https://github.com/edgarchinchilla/dynamo-backup-to-s3.git"
   },
   "keywords": [
     "dynamo",
@@ -19,22 +19,21 @@
     "dynamo-backup-to-s3": "./bin/dynamo-backup-to-s3"
   },
   "dependencies": {
-    "async": "^1.5.0",
-    "aws-sdk": "^2.2.21",
+    "async": "^1.5.2",
+    "aws-sdk": "^2.3.16",
     "commander": "^2.9.0",
     "lodash": "^3.10.1",
-    "moment": "^2.10.6",
-    "moment-range": "^2.0.3",
-    "s3-streaming-upload": "^0.2.1"
+    "moment": "^2.13.0",
+    "moment-range": "^2.2.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.3.0"
   },
   "bugs": {
-    "url": "https://github.com/markitx/dynamo-backup-to-s3/issues"
+    "url": "https://github.com/edgarchinchilla/dynamo-backup-to-s3.git/issues"
   },
   "devDependencies": {
-    "mocha": "^2.3.4"
+    "mocha": "^2.5.3"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --timeout 120000"
